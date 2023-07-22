@@ -1,5 +1,7 @@
+
+module.exports(app)=>{
 //import package
-const {apigwClient } = require("./node_modules/selcom-apigw-client");
+const {apigwClient } = require("selcom-apigw-client");
 // initalize a new apiAccess instace with values of the base url, api key and api secret
 
 const apiKey = '202cb962ac59075b964b07152d234b70';
@@ -33,3 +35,4 @@ var  orderRespose = client.postFunc(orderPath, orderJson)
 orderResponse.then((response)=> {console.log(response)}).catch((response)=> {console.log(response)})
 
 console.log(orderRespose)
+}

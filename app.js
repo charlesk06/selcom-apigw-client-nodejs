@@ -1,5 +1,5 @@
 const express = require('express')
-const apigwCLient = require('./index.js')
+const apigwCLient = require('./authentication.js')
 
 const app = express()
 
