@@ -1,7 +1,7 @@
 const http = require('http')
 const express = require('express')
 //import package
-const apigwClient = require('../selcom-apigw-client-nodejs/node_modules/selcom-apigw-client/');
+const apigwClient = require('selcom-apigw-client');
 
 const app = express()
 
@@ -19,9 +19,9 @@ const client = new apigwClient.apigwCLient(baseUrl, apiKey, apiSecret);
 
 //data
 var utilityPaymentJson = {
-    "transid": "1218d5Q876669",
-    "utilitycode": "LUKU",
-    "utilityref": "54205401976",
+    "transid": "1218d5Q87666967",
+    "utilitycode": "TOP",
+    "utilityref": "255752402589",
     "amount": 1000,
     "vendor": "Y9BANKTZ",
     "pin": "0069",

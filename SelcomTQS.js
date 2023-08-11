@@ -1,7 +1,7 @@
 const http = require('http')
 const express = require('express')
 //import package
-const apigwClient = require('../selcom-apigw-client-nodejs/node_modules/selcom-apigw-client/');
+const apigwClient = require('selcom-apigw-client');
 
 const app = express()
 
@@ -18,25 +18,17 @@ const baseUrl = "https://apigwtest.selcommobile.com";
 const client = new apigwClient.apigwCLient(baseUrl, apiKey, apiSecret);
 
 //data
-var utilityPaymentJson = {
-    "transid": "1218d5Q876669",
-    "utilitycode": "LUKU",
-    "utilityref": "54205401976",
-    "amount": 1000,
-    "vendor": "Y9BANKTZ",
-    "pin": "0069",
-    "msisdn": "255752402589"
+var utilityPaymentStatusJson = {
+  "transid":"1218d5Q876669"
 };
 // path relatiive to base url
-var utilityPaymentPath = "/v1/utilitypayment/process"
+var utilityPaymentStatusPath = "/v1/utilitypayment/query"
 
-//crate new utilityPayment
-var utilityPaymentRespose = client.postFunc(utilityPaymentPath, utilityPaymentJson);
-
-console.log(client.computeHeader(baseUrl, apiKey, apiSecret));
+//crate new utilityPaymentStatus
+var  utilityPaymentStatusRespose = client.getFunc(utilityPaymentStatusPath, utilityPaymentStatusJson);
 
 //Aync Response Log
-utilityPaymentRespose.then(a => console.log(a));
+utilityPaymentStatusRespose.then(a => console.log(a));
 
 app.listen(4000, () => {
     console.log('Node APP is running on Port 4000');
