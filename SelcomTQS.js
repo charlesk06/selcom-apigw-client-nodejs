@@ -19,7 +19,7 @@ const client = new apigwClient.apigwCLient(baseUrl, apiKey, apiSecret);
 
 //data
 var utilityPaymentStatusJson = {
-  "transid":"1218d5Q876669"
+  "transid":"LUKU_d5a713dc-33fd-4f0e-b45e-a10eab092d59"
 };
 // path relatiive to base url
 var utilityPaymentStatusPath = "/v1/utilitypayment/query"
